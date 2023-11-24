@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	
+	 <!-- ... (kode sebelumnya) ... -->
+
+    <!-- Navigasi -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{{ url_for('projects') }}">Project</a></li>
+            <li><a href="{{ url_for('certificate') }}">Certificate</a></li>
+            <li><a href="{{ url_for('skill') }}">Skill</a></li>
+        </ul>
+    </nav>
+
+  
+	<section id="projects">
+		<div class="container">
+			<h2>Proyek Saya</h2>
+
+			<!-- Dropdown untuk Memilih Tahun -->
+			<label for="year-select">Pilih Tahun:</label>
+			<select id="year-select" onchange="filterProjectsByYear()">
+				<option value="all">Semua Tahun</option>
+				<option value="2023">2023</option>
+				<option value="2022">2022</option>
+				<!-- Tambahkan opsi tahun lainnya sesuai kebutuhan -->
+			</select>
+
+			<!-- Container untuk Menampilkan Proyek -->
+			<div id="project-container">
+				<!-- Proyek Tahun 2023 -->
+				<div class="project" data-year="2023">
+					<img src="{{ url_for('static', filename='project1.jpg') }}" alt="Proyek 1">
+					<div class="project-info">
+						<h4>Nama Proyek 1</h4>
+						<p>Deskripsi singkat tentang proyek 1. Proyek ini melibatkan penggunaan teknologi A, B, dan C.</p>
+						<a href="#" class="btn">Lihat Proyek</a>
+					</div>
+				</div>
+				<div class="project" data-year="2023">
+					<img src="{{ url_for('static', filename='project2.jpg') }}" alt="Proyek 2">
+					<div class="project-info">
+						<h4>Nama Proyek 2</h4>
+						<p>Deskripsi singkat tentang proyek 2. Proyek ini melibatkan penggunaan teknologi X, Y, dan Z.</p>
+						<a href="#" class="btn">Lihat Proyek</a>
+					</div>
+				</div>
+
+				<!-- Proyek Tahun 2022 -->
+				<div class="project" data-year="2022">
+					<img src="{{ url_for('static', filename='project3.jpg') }}" alt="Proyek 3">
+					<div class="project-info">
+						<h4>Nama Proyek 3</h4>
+						<p>Deskripsi singkat tentang proyek 3. Proyek ini melibatkan penggunaan teknologi P, Q, dan R.</p>
+						<a href="#" class="btn">Lihat Proyek</a>
+					</div>
+				</div>
+				<div class="project" data-year="2022">
+					<img src="{{ url_for('static', filename='project4.jpg') }}" alt="Proyek 4">
+					<div class="project-info">
+						<h4>Nama Proyek 4</h4>
+						<p>Deskripsi singkat tentang proyek 4. Proyek ini melibatkan penggunaan teknologi M, N, dan O.</p>
+						<a href="#" class="btn">Lihat Proyek</a>
+					</div>
+				</div>
+
+				<!-- Tambahkan lebih banyak blok proyek tahun di sini sesuai kebutuhan -->
+
+			</div>
+		</div>
+	</section>
+	
+	<!-- Sisipkan script JavaScript untuk Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        });
+    </script>
+
+    <!-- Sisipkan script JavaScript untuk menandai halaman aktif -->
+    <script>
+        // Ambil path dari URL dan temukan elemen navigasi yang sesuai
+        var path = window.location.pathname;
+        var navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(function(link) {
+            if (link.getAttribute('href') === path) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
+	
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Portofolio Saya</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- ... (kode sebelumnya) ... -->
+
+<script>
+    function filterProjectsByYear() {
+        var selectedYear = document.getElementById("year-select").value;
+        var projects = document.getElementsByClassName("project");
+
+        for (var i = 0; i < projects.length; i++) {
+            var projectYear = projects[i].getAttribute("data-year");
+
+            if (selectedYear === "all" || projectYear === selectedYear) {
+                projects[i].style.display = "block";
+            } else {
+                projects[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+<!-- ... (kode setelahnya) ... -->
+
+
+
+
+

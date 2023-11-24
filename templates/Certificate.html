@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+	
+	 <!-- ... (kode sebelumnya) ... -->
+
+    <!-- Navigasi -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{{ url_for('projects') }}">Project</a></li>
+            <li><a href="{{ url_for('certificate') }}">Certificate</a></li>
+            <li><a href="{{ url_for('skill') }}">Skill</a></li>
+        </ul>
+    </nav>
+
+	
+	<!-- Sertifikat -->
+	<section id="certificates">
+		<div class="container">
+			<h2 class="section-title">Sertifikat</h2>
+
+			<div class="certificate-item">
+				<img src="{{ url_for('static', filename='project1.jpg') }}" alt="Certificate 1">
+			</div>
+
+			<div class="certificate-item">
+				<img src="{{ url_for('static', filename='project1.jpg') }}" alt="Certificate 2">
+			</div>
+
+			<!-- Tambahkan sertifikat lainnya sesuai kebutuhan -->
+		</div>
+	</section>
+	
+	<!-- Sisipkan script JavaScript untuk Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        });
+    </script>
+
+    <!-- Sisipkan script JavaScript untuk menandai halaman aktif -->
+    <script>
+        // Ambil path dari URL dan temukan elemen navigasi yang sesuai
+        var path = window.location.pathname;
+        var navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(function(link) {
+            if (link.getAttribute('href') === path) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
+	
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Portofolio Saya</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- ... (kode sebelumnya) ... -->
+
+<script>
+    function filterProjectsByYear() {
+        var selectedYear = document.getElementById("year-select").value;
+        var projects = document.getElementsByClassName("project");
+
+        for (var i = 0; i < projects.length; i++) {
+            var projectYear = projects[i].getAttribute("data-year");
+
+            if (selectedYear === "all" || projectYear === selectedYear) {
+                projects[i].style.display = "block";
+            } else {
+                projects[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+<!-- ... (kode setelahnya) ... -->
+
+
+
+
+

@@ -1,0 +1,261 @@
+
+/* styles.css */
+body {
+     background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff; /* Warna teks utama (putih) */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.intro-text {
+    max-width: 500px;
+    text-align: left;
+    color: #f2f2f2; /* Warna teks kedua (abu-abu terang) */
+}
+
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    color: #f2f2f2; /* Warna teks kedua (abu-abu terang) */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    color: #f2f2f2; /* Warna teks kedua (abu-abu terang) */
+}
+
+/* ... (kode sebelumnya) ... */
+
+#year-select {
+    margin-bottom: 20px;
+}
+
+.project {
+    display: flex;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+
+.project img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+	font-weight: bold;
+}
+
+.btn:hover {
+    background-color:  #e59b00;
+}
+
+/* ... (kode setelahnya) ... */
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #f2f2f2; /* Warna teks kedua (abu-abu terang) */
+}
+/* ... (kode sebelumnya) ... */
+
+.project-year {
+    margin-bottom: 40px;
+}
+
+.project-year h3 {
+    font-size: 24px;
+    color: #f8f8f8; /* Warna teks kedua (abu-abu terang) */
+    margin-bottom: 10px;
+}
+
+.project h4 {
+    color: #f8f8f8; /* Warna teks kedua (abu-abu terang) */
+}
+
+/* ... (kode setelahnya) ... */
+
+/* ... (kode sebelumnya) ... */
+
+/* ... (kode sebelumnya) ... */
+
+#education,
+#experience {
+    background-color: #f8f8f8; /* Warna latar belakang untuk memisahkan seksi */
+    padding: 40px 0;
+    text-align: center; /* Pusatkan teks dalam seksi */
+}
+
+.section-title {
+	font-size: 28px;
+    color: #ffcc00; /* Warna teks utama */
+    margin-bottom: 30px;
+}
+
+.education-item,
+.experience-item {
+    margin-bottom: 20px;
+    text-align: left; /* Pusatkan teks ke kiri */
+}
+
+.education-item h3,
+.experience-item h3 {
+	font-size: 24px;
+    color: #ff9900; /* Warna teks utama */
+}
+
+.education-item p,
+.experience-item p {
+    color:#fff; /* Warna teks kedua */
+    margin-bottom: 18px;
+}
+
+/* ... (kode setelahnya) ... */
+
+/* ... (kode sebelumnya) ... */
+
+
+
+#certificates {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.certificate-item {
+    margin-bottom: 20px;
+}
+
+.certificate-item img {
+    width: 100%; /* Sesuaikan lebar gambar sertifikat sesuai kebutuhan */
+}
+
+/* ... (kode setelahnya) ... */
+
+/* ... (kode sebelumnya) ... */
+
+#skills {
+    background-color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-icon {
+    width: 80px; /* Sesuaikan ukuran ikon keterampilan */
+}
+
+.skill-label {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.skill-level {
+    display: block;
+    margin-top: 5px;
+    color: #555555;
+}
+
+/* ... (kode setelahnya) ... */
+/* ... (kode sebelumnya) ... */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px; /* Menambahkan padding untuk membuat tautan lebih besar dan mudah diakses */
+    transition: color 0.3s ease; /* Efek transisi untuk perubahan warna */
+}
+
+/* Gaya untuk menandai halaman yang sedang aktif */
+nav a.active {
+    color: #ffcc00; /* Warna kuning untuk menandai halaman aktif */
+}
+
+/* Efek hover untuk tautan */
+nav a:hover {
+    color: #ffcc00; /* Warna kuning ketika dihover */
+    background-color: #555; /* Warna latar belakang ketika dihover */
+    border-radius: 5px; /* Memberikan sudut melengkung pada latar belakang */
+}
+
+/* ... (kode setelahnya) ... */
+
+/* Contoh CSS untuk Efek Paralaks */
+#home {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+

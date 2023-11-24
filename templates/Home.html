@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	
+	 <!-- ... (kode sebelumnya) ... -->
+
+    <!-- Navigasi -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{{ url_for('projects') }}">Project</a></li>
+            <li><a href="{{ url_for('certificate') }}">Certificate</a></li>
+            <li><a href="{{ url_for('skill') }}">Skill</a></li>
+        </ul>
+    </nav>
+
+   
+	
+	
+	<!-- Konten Beranda -->
+	<section id="home" class="unique-home" style="background-image: url('{{ url_for('static', filename='background.jpg') }}');">
+		<div class="container">
+			<div class="home-content">
+				<div class="intro">
+					<img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profil Saya" class="profile-image">
+					<div class="intro-text">
+						<h1 class="intro-title">Hello, I'm <span class="highlight">Choirul Anam S.ST.</span></h1>
+						<p class="intro-description">Welcome to My Web Portofolio. I am an experienced Robotic and PLC Software Developer.</p>
+						<a href="#contact" class="btn btn-hover">Contact Me</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+	
+	<!-- Tentang Saya -->
+	<section id="about" style="background: linear-gradient(to right, #1e5799, #2989d8, #207cca); opacity: 0.9; padding: 10px 0;">
+		<div class="container">
+			<h2 class="section-title" style="color: #fff;">About Me</h2>
+			<div class="about-content">
+				<div class="about-description">
+					<p class="about-text" style="color: #fff;">
+						Saya adalah seorang pengembang web dengan keahlian dalam teknologi web modern. Saya telah bekerja di berbagai proyek, mulai dari pengembangan frontend hingga pengelolaan server backend.
+					</p>
+					<p class="about-text" style="color: #fff;">
+						Selama karier saya, saya telah membangun solusi kreatif untuk masalah teknis, bekerja dalam tim, dan terus belajar tentang perkembangan terbaru dalam dunia pengembangan web.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- Riwayat Pendidikan -->
+	<section id="education" style="background: linear-gradient(to right, #333, #555); opacity: 0.9; color: #fff;">
+		<div class="container">
+			<h2 class="section-title" >Riwayat Pendidikan</h2>
+
+			<div class="education-item">
+				<h3 class="education-title" >Master of Computer Science <i class="fas fa-graduation-cap"></i></h3>
+				<p class="education-description" >Universitas Contoh, Kota Contoh, Tahun 20XX-20XX</p>
+			</div>
+
+			<div class="education-item">
+				<h3 class="education-title">Sarjana Teknik Informatika</h3>
+				<p class="education-description">Universitas Lain, Kota Lain, Tahun 20XX-20XX</p>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<!--Experience-->
+	<section id="education" style="background: linear-gradient(to right, #333, #555); opacity: 0.9; color: #fff;">
+		<div class="container">
+			<h2 class="section-title">Pengalaman Kerja</h2>
+
+			<div class="experience-item">
+				<h3>Senior Web Developer</h3>
+				<p>Perusahaan ABC, Kota ABC, Tahun 20XX-20XX</p>
+				<p>Bertanggung jawab atas pengembangan proyek-proyek web skala besar.</p>
+			</div>
+
+			<div class="experience-item">
+				<h3>Web Developer</h3>
+				<p>Perusahaan XYZ, Kota XYZ, Tahun 20XX-20XX</p>
+				<p>Terlibat dalam pengembangan berbagai aplikasi web dengan teknologi terkini.</p>
+			</div>
+		</div>
+	</section>
+	
+	
+	<!-- Sisipkan script JavaScript untuk Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        });
+    </script>
+
+    <!-- Sisipkan script JavaScript untuk menandai halaman aktif -->
+    <script>
+        // Ambil path dari URL dan temukan elemen navigasi yang sesuai
+        var path = window.location.pathname;
+        var navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(function(link) {
+            if (link.getAttribute('href') === path) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
+
+    <section id="contact" style="background: #333; color: #fff;">
+       <div class="container">
+			<h2 class="section-title" style="font-size: 28px;">Hubungi Saya</h2>
+			<p style="font-size: 15px; color:#fff;">Jika Anda tertarik untuk bekerja sama atau memiliki pertanyaan, jangan ragu untuk menghubungi saya. Saya sangat senang berkomunikasi dengan Anda!</p>
+			<a href="mailto:email@example.com" class="btn btn-hover">Email Saya</a>
+		</div>
+    </section>
+	
+	<!-- Hubungi Saya 
+	<section id="contact" style="background: #333; color: #fff;">
+		<div class="container">
+			<h2 class="section-title" style="font-size: 28px;">Hubungi Saya</h2>
+			<p style="font-size: 18px;">Jika Anda tertarik untuk bekerja sama atau memiliki pertanyaan, jangan ragu untuk menghubungi saya. Saya sangat senang berkomunikasi dengan Anda!</p>
+			<a href="mailto:email@example.com" class="btn btn-hover" style="background-color: #ffcc00; color: #333; font-weight: bold;">Email Saya</a>
+		</div>
+	</section>
+
+	-->
+	
+   <!-- Footer -->
+	<footer style="background: #333; color: #fff;">
+		<div class="container">
+			<p>&copy; 2023 Portofolio Saya</p>
+		</div>
+	</footer>
+
+</body>
+</html>
+<!-- ... (kode sebelumnya) ... -->
+
+<!-- ... (kode setelahnya) ... -->
+
+
+
+
+
